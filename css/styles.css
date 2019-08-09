@@ -1,0 +1,109 @@
+@import url("reset.css");
+
+html,
+body {
+  background: #000;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+h1 {
+  display: none;
+}
+
+#body {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+#mapid {
+  flex: 1;
+  order: 1;
+}
+
+#locations {
+  flex: 1;
+  order: 0;
+}
+
+#locations ol {
+  height: 100%;
+  position: absolute;
+  width: 50%;
+}
+
+#locations ol li {
+  bottom: 0;
+  color: #666;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18pt;
+  padding-top: calc(50vh - 9pt);
+  position: absolute;
+  top: 0;
+  text-align: center;
+  transition: all .5s;
+  user-select: none;
+  vertical-align: middle;
+  width: 100px;
+}
+
+#locations ol li:hover {
+  color: #fff;
+}
+
+#locations ol li.next {
+  right: 0;
+}
+
+#locations ul {
+  height: 100%;
+  margin-left: 100px;
+  overflow: hidden;
+  position: relative;
+  width: calc(100% - 200px);
+  z-index: 1;
+}
+
+#locations ul li {
+  float: left;
+  opacity: 0;
+  position: absolute;
+  vertical-align: top;
+  transition: all .5s;
+}
+
+#locations ul li.active {
+  opacity: 1;
+}
+
+#locations li > * {
+  pointer-events: none;
+}
+
+#locations h3 {
+  font-weight: bold;
+  font-size: 18pt;
+  margin: 9pt 0;
+  text-transform: capitalize;
+}
+
+#location p {
+  text-transform: capitalize;
+}
+
+@media(orientation:portrait){
+  #body {
+    flex-direction: column;
+  }
+  #mapid {
+    order: 0;
+  }
+  #locations {
+    order: 1;
+  }
+  #locations ol {
+    width: 100%;
+  }
+}

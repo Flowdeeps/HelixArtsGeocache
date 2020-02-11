@@ -31,7 +31,7 @@ window.addEventListener('load', function(){
 
   function initMap(data){
     	var mymap = L.map('mapid')
-                   .setView([data.bounds.long, data.bounds.lat], 15);
+                   .setView([data.bounds.long, data.bounds.lat], 16);
       mymap.dragging.disable();
     	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={access_token}', {
     		maxZoom: 18,
@@ -103,7 +103,6 @@ window.addEventListener('load', function(){
   }
 
   function activeStates(markers, shadows, index) {
-    console.log(markers.length, shadows.length, index);
     var listItems = document.getElementById("locationsDescription")
                             .getElementsByTagName("LI");
     for (var i = 0; i < markers.length; i++){

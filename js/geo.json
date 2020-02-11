@@ -1,44 +1,44 @@
 {
   "bounds": {
-    "long": 54.62,
-    "lat": -1.760
+    "long": 54.6219354,
+    "lat": -1.7644554
   },
   "locations": [
     {
-      "title": "place 1",
-      "description": "this is the first place",
-      "long": 54.62,
-      "lat": -1.760
+      "title": "St Paul's Church",
+      "description": "This is the first place",
+      "long": 54.6206589,
+      "lat": -1.7616015
     },
     {
-      "title": "place 2",
-      "description": "this is the second place",
-      "long": 54.62,
-      "lat": -1.765
+      "title": "Shirley Close",
+      "description": "This is the second place",
+      "long": 54.6224572,
+      "lat": -1.7610221
     },
     {
-      "title": "place 3",
-      "description": "this is the third place",
-      "long": 54.619,
-      "lat": -1.764
+      "title": "Cornerstone Christian Centre",
+      "description": "This is the third place",
+      "long": 54.6235504,
+      "lat": -1.7640208
     },
     {
-      "title": "place 4",
-      "description": "this is the fourth place",
-      "long": 54.618,
-      "lat": -1.767
+      "title": "War Memorial",
+      "description": "This is the fourth place",
+      "long": 54.6226746,
+      "lat": -1.7633932
     },
     {
-      "title": "place 5",
-      "description": "this is the fifth place",
-      "long": 54.6185,
+      "title": "Playpark",
+      "description": "This is the fifth place",
+      "long": 54.6222274,
       "lat": -1.7675
     },
     {
-      "title": "place 6",
-      "description": "this is the sixth place",
-      "long": 54.621,
-      "lat": -1.7601
+      "title": "Wellgarth House",
+      "description": "This is the sixth place",
+      "long": 54.6198172,
+      "lat": -1.762213
     }
   ]
 }

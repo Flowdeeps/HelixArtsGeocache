@@ -32,7 +32,7 @@ window.addEventListener('load', function(){
   function initMap(data){
     	var mymap = L.map('mapid')
                    .setView([data.bounds.long, data.bounds.lat], 16);
-      mymap.dragging.disable();
+      // mymap.dragging.disable();
     	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={access_token}', {
     		maxZoom: 18,
     		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +

@@ -52,6 +52,7 @@ window.addEventListener('load', function(){
   function createList(data){
     var index = 0;
     var markers = document.getElementsByClassName("leaflet-marker-icon");
+    var shadows = document.getElementsByClassName("leaflet-marker-shadow");
     var locations = document.getElementById("locations");
     var navigation = document.createElement("OL");
     navigation.classList.add("nav");
@@ -61,7 +62,7 @@ window.addEventListener('load', function(){
     prev.onclick = function(){
       if (index != 0) {
         index -= 1;
-        activeStates(markers, index);
+        activeStates(markers, shadows, index);
       }
     }
     var next = document.createElement("LI");
@@ -70,7 +71,7 @@ window.addEventListener('load', function(){
     next.onclick = function(){
       if (index < data.locations.length - 1) {
         index += 1;
-        activeStates(markers, index);
+        activeStates(markers, shadows, index);
       }
     }
     navigation.appendChild(prev);
@@ -83,7 +84,11 @@ window.addEventListener('load', function(){
       var listItem = document.createElement("LI");
       if (i == 0) {
         listItem.classList.add("active");
-        markers[0].src = "images/marker-icon-active-2x.png";
+      }
+      for (var j = 0; j < markers.length; j++) {
+        if (j !== 0)
+          markers[j].classList.add("hidden");
+          shadows[j].classList.add("hidden");
       }
       var header = document.createElement("H3");
       header.innerText = loc.title;
@@ -97,16 +102,18 @@ window.addEventListener('load', function(){
     locations.appendChild(list);
   }
 
-  function activeStates(markers, index) {
+  function activeStates(markers, shadows, index) {
+    console.log(markers.length, shadows.length, index);
     var listItems = document.getElementById("locationsDescription")
                             .getElementsByTagName("LI");
-
     for (var i = 0; i < markers.length; i++){
       listItems[i].classList.remove('active');
-      markers[i].src = "images/marker-icon-2x.png";
+      markers[i].classList.add('hidden')
+      shadows[i].classList.add("hidden");
     }
     listItems[index].classList.add('active');
-    markers[index].src = "images/marker-icon-active-2x.png";
+    markers[index].classList.remove("hidden");
+    shadows[index].classList.remove("hidden");
   }
 
   makeRequest();

@@ -78,6 +78,10 @@ h1 {
   opacity: 1;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 #locations li > * {
   pointer-events: none;
 }

@@ -52,6 +52,9 @@ h1 {
 #locations ol li:hover {
   color: #fff;
 }
+#locations ol li.end:hover {
+  color: #666;
+}
 
 #locations ol li.next {
   right: 0;
@@ -121,4 +124,13 @@ h1 {
     font-size: 50pt;
     padding: calc(25vh - 25pt) 0;
   }
+  #locations ol li:hover {
+    color: #666;
+  }
+  #locations ol li:active {
+    color: #fff;
+  }
+  #locations ol li.end:active {
+    color: #666;
+  } 
 }

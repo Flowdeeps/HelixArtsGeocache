@@ -107,7 +107,18 @@ h1 {
   #locations {
     order: 1;
   }
+  #locations ul li h3 {
+    font-size: 50pt;
+    margin: 25pt 0;
+  }
+  #locations ul li p {
+    font-size: 50pt;
+  }
   #locations ol {
     width: 100%;
+  }
+  #locations ol li {
+    font-size: 50pt;
+    padding: calc(25vh - 25pt) 0;
   }
 }

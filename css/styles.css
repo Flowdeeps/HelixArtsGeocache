@@ -1,5 +1,9 @@
 @import url("reset.css");
 
+* {
+  user-select: none;
+}
+
 html,
 body {
   background: #000;
@@ -30,6 +34,7 @@ h1 {
 #locations ol {
   height: 100%;
   position: absolute;
+  top: 0;
   width: 50%;
 }
 
@@ -74,11 +79,13 @@ h1 {
   opacity: 0;
   position: absolute;
   vertical-align: top;
+  visibility: hidden;
   transition: all .5s;
 }
 
 #locations ul li.active {
   opacity: 1;
+  visibility: visible;
 }
 
 .hidden {
@@ -132,5 +139,16 @@ h1 {
   }
   #locations ol li.end:active {
     color: #666;
-  } 
+  }
+  .object {
+    height: 50vh;
+  }
+}
+
+.object {
+  height: 100vh;
+  min-height: 500px;
+  position: relative;
+  width: calc(50vw - 200px);
+  z-index: 100;
 }

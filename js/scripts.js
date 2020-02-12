@@ -89,7 +89,6 @@ window.addEventListener('load', function(){
     }
     navigation.appendChild(prev);
     navigation.appendChild(next);
-    locations.appendChild(navigation);
     var list = document.createElement("UL");
     list.id = "locationsDescription";
     for (var i = 0; i < data.locations.length; i++) {
@@ -104,15 +103,30 @@ window.addEventListener('load', function(){
           shadows[j].classList.add("hidden");
       }
       var header = document.createElement("H3");
-      header.innerText = loc.title;
-      var para = document.createElement("P");
-      para.innerText = loc.description;
-      listItem.appendChild(header);
-      listItem.appendChild(para);
+      // if (!loc.form) {
+      //   header.innerText = loc.title;
+      //   listItem.appendChild(header);
+      // }
+      // if (loc.description) {
+      //   var para = document.createElement("P");
+      //   para.innerText = loc.description;
+      //   listItem.appendChild(para);
+      // }
+      if (loc.form) {
+        var form = document.createElement("OBJECT");
+        form.data = loc.form;
+        form.innerHTML = "Loading&hellip;";
+        form.classList.add("object");
+        form.setAttribute("frameborder", 0);
+        form.setAttribute("marginheight", 0);
+        form.setAttribute("marginwidth", 0);
+        listItem.append(form);
+      }
       listItem.id = i;
       list.appendChild(listItem);
     }
     locations.appendChild(list);
+    locations.appendChild(navigation);
   }
 
   function activeStates(markers, shadows, index) {

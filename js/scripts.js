@@ -89,11 +89,12 @@ window.addEventListener('load', function(){
     }
     navigation.appendChild(prev);
     navigation.appendChild(next);
-    var list = document.createElement("UL");
+    locations.appendChild(navigation);
+    var list = document.createElement("DIV");
     list.id = "locationsDescription";
     for (var i = 0; i < data.locations.length; i++) {
       var loc = data.locations[i];
-      var listItem = document.createElement("LI");
+      var listItem = document.createElement("DIV");
       if (i == 0) {
         listItem.classList.add("active");
       }
@@ -103,35 +104,25 @@ window.addEventListener('load', function(){
           shadows[j].classList.add("hidden");
       }
       var header = document.createElement("H3");
-      // if (!loc.form) {
-      //   header.innerText = loc.title;
-      //   listItem.appendChild(header);
-      // }
-      // if (loc.description) {
-      //   var para = document.createElement("P");
-      //   para.innerText = loc.description;
-      //   listItem.appendChild(para);
-      // }
       if (loc.form) {
-        var form = document.createElement("OBJECT");
-        form.data = loc.form;
+        var form = document.createElement("IFRAME");
+        form.src = loc.form;
         form.innerHTML = "Loading&hellip;";
-        form.classList.add("object");
         form.setAttribute("frameborder", 0);
         form.setAttribute("marginheight", 0);
         form.setAttribute("marginwidth", 0);
+        form.setAttribute("tabindex", 0);
         listItem.append(form);
       }
       listItem.id = i;
       list.appendChild(listItem);
     }
     locations.appendChild(list);
-    locations.appendChild(navigation);
   }
 
   function activeStates(markers, shadows, index) {
     var listItems = document.getElementById("locationsDescription")
-                            .getElementsByTagName("LI");
+                            .getElementsByTagName("DIV");
     for (var i = 0; i < markers.length; i++){
       listItems[i].classList.remove('active');
       markers[i].classList.add('hidden')
